@@ -9,7 +9,7 @@ const paper_div = document.getElementById("paper")
 const scissors_div = document.getElementById("scissors")
 
 
-function gameStart(userChoice){
+function gameStart(userChoice) {
   const computerChoice = pickComputerMove();
 
   let result = '';
@@ -18,58 +18,56 @@ function gameStart(userChoice){
     if (computerChoice === 'rock') {
       result = 'Tie.';
     } else if (computerChoice === 'paper') {
-      result = 'You Lose.';
+      result = 'You Lose... 😭.';
     } else if (computerChoice === 'scissors') {
-      result = 'You Win!';
+      result = 'You Win! 🎉';
     }
   }
 
   if (userChoice === 'paper') {
     if (computerChoice === 'rock') {
-      result = 'You Win!';
+      result = 'You Win! 🎉';
     } else if (computerChoice === 'paper') {
       result = 'Tie.';
     } else if (computerChoice === 'scissors') {
-      result = 'You Lose.';
+      result = 'You Lose... 😭.';
     }
   }
 
   if (userChoice === 'scissors') {
     if (computerChoice === 'rock') {
-      result = 'You Lose.';
+      result = 'You Lose... 😭';
     } else if (computerChoice === 'paper') {
-      result = 'You Win!';
+      result = 'You Win! 🎉';
     } else if (computerChoice === 'scissors') {
       result = 'Tie.';
     }
   }
 
-  if(result === "You Win!"){
+  if (result === "You Win! 🎉") {
     userScore++;
     userScore_span.innerHTML = userScore;
 
-  } else if (result === 'You Lose.') {
+  } else if (result === 'You Lose... 😭.') {
     computerScore++;
     computerScore_span.innerHTML = computerScore;
   }
 
   /*document.querySelector(result_p.innerHTML)(`You picked ${userChoice}. Computer picked ${computerChoice}. ${result}`);*/
   /*result_p.innerHTML = `${(userChoice)} beats ${(computerChoice)}. You Win! :)`;*/
-  
+
   result_p.innerHTML = `You pick ${(userChoice)}. Computer pick ${(computerChoice)}. ${result}`
-
-
 }
 
-rock_div.addEventListener('click', function(){
+rock_div.addEventListener('click', function () {
   gameStart("rock")
 })
 
-paper_div.addEventListener('click', function(){
+paper_div.addEventListener('click', function () {
   gameStart("paper")
-})  
+})
 
-scissors_div.addEventListener('click', function(){
+scissors_div.addEventListener('click', function () {
   gameStart("scissors")
 })
 
@@ -89,7 +87,7 @@ function pickComputerMove() {
   return computerChoice;
 }
 
-function updateScore(){
+function updateScore() {
   document.getElementById('user-score')
 }
 
